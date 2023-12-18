@@ -45,7 +45,7 @@
             padding: 10px;
             transition: 0.5s;
         }
-        .header-contentner nav ul li a:hover{
+        .opened,.header-contentner nav ul li a:hover{
             border-bottom: 3px solid rgb(1, 168, 190);
         }
         .contaner{
@@ -62,6 +62,30 @@
             font-size: 18px;
             text-align: justify;
         }
+        @media screen and (max-width: 700px) {
+            .header-contentner nav{
+                flex-direction: column;
+                text-align: center;
+            }
+            .header-contentner nav ul{
+                display: contents;
+            }
+            .header-contentner nav ul li{
+                margin: 5px;
+                padding: 10px;
+                background-color: rgba(128, 128, 128, 0.342);
+                border-radius: 5px;
+            }
+            .open, .header-contentner nav ul li:hover{
+                border-bottom: 3px solid rgb(1, 168, 190);
+            }
+            .opend{
+                border-bottom: none;
+            }
+            .header-contentner nav ul li a:hover{
+            border-bottom: none;
+        }
+        }
     </style>
 </head>
 <body>
@@ -69,7 +93,7 @@
       <nav>
         <h1>LOGO</h1>
         <ul>
-            <li><a href="#">HOME</a></li>
+            <li class="open"><a href="#" class="opened">HOME</a></li>
             <li><a href="#">Post</a></li>
             <li><a href="#">Project</a></li>
             <li><a href="#">About us</a></li>
@@ -87,7 +111,10 @@
 
 
     <script>
-
+        let nav = document.querySelector("nav");
+        window.addEventListener("scroll",()=>{
+            console.log("scrole")
+        });
     </script>
 </body>
 </html>
